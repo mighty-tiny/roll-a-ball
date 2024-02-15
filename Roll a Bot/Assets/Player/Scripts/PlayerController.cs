@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private float speed;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float movementX;
     [SerializeField] private float movementY;
@@ -21,7 +23,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         movement = new Vector3(movementX, 0.0f, movementY);
-            rb.AddForce(movement);
+            rb.AddForce(movement * speed);
     }
 
     void OnMove(InputValue movementValue) 

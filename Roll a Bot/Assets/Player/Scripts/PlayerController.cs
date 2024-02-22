@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameObject ufo;
+    [SerializeField] private GameObject beam;
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float movementX;
